@@ -85,15 +85,13 @@ export class BetsService {
       }
 
       // Check if user already has a bet on this match
-      const existingBet = await queryRunner.manager.findOne(Bet, {
-        where: { userId, matchId: createBetDto.matchId },
-      });
+      const betCount = await this.betRepo.count({
+  where: { userId, matchId },
+});
 
-      if (existingBet) {
-        throw new ConflictException(
-          'You have already placed a bet on this match',
-        );
-      }
+if (betCount >= MAX_BETS_PER_MATCH) {
+  throw new BadRequestException('Bet limit reached for this match');
+}
 
       // Resolve free bet voucher if provided. Vouchers: non-withdrawable, betting only, auto-consumed on use.
       let useVoucher = false;
