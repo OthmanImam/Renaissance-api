@@ -66,6 +66,7 @@ import { FraudModule } from './fraud/fraud.module';
 import { TeamsModule } from './teams/teams.module';
 import { PlayersModule } from './players/players.module';
 import { RankingModule } from './leaderboard/ranking.module';
+import { LiveModule } from './live/live.module';
 
 
 
@@ -153,6 +154,7 @@ import { RateLimitGuard } from './common/guards/rate-limit.guard';
     FraudModule,
     TeamsModule,
     PlayersModule,
+    LiveModule,
 
     RankingModule,
 
