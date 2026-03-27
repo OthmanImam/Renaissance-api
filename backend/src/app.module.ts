@@ -68,8 +68,6 @@ import { PlayersModule } from './players/players.module';
 import { RankingModule } from './leaderboard/ranking.module';
 import { LiveModule } from './live/live.module';
 
-
-
 // Custom role-based guard
 import { RateLimitGuard } from './common/guards/rate-limit.guard';
 
@@ -157,8 +155,6 @@ import { RateLimitGuard } from './common/guards/rate-limit.guard';
     LiveModule,
 
     RankingModule,
-
-
   ],
   providers: [
     {
