@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { NotificationsService } from './notifications.service';
-// import { NotificationsGateway } from './notifications.gateway';
+import { NotificationsGateway } from './notifications.gateway';
 import { NotificationIntegrationService } from './notification-integration.service';
 import { NotificationsController } from './notifications.controller';
 import { User } from '../users/entities/user.entity';
@@ -18,13 +18,13 @@ import { AchievementUnlockedNotificationHandler } from './handlers/achievement-u
   controllers: [NotificationsController],
   providers: [
     NotificationsService,
-    // NotificationsGateway,
+    NotificationsGateway,
     NotificationIntegrationService,
     AchievementUnlockedNotificationHandler,
   ],
   exports: [
     NotificationsService,
-    // NotificationsGateway,
+    NotificationsGateway,
     NotificationIntegrationService,
   ],
 })
